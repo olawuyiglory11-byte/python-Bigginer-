@@ -66,45 +66,44 @@ learn to code in Python and develop both practical skills and elegant coding hab
 </form>
 
 
-    <h2>Python Basics Quiz</h2>
-
-<form id="quiz">
-  <label for="q1">1.what function is used to display output or text to the screen in python?</label><br>
-  <select id="q1">
-    <option value> = 67.</option>
-    <option value="=">echo("hello world")</option>
-    <option value="==">print("Hello world")</option>
-    <option value="def">showonpythonscreen.com</option>
+ <form id="quiz">
+  <label for="q1">1. What function is used to display output or text to the screen in Python?</label><br>
+  <select id="q1" required>
+    <option value="" disabled selected>Select an answer</option>
+    <option value="echo">echo("hello world")</option>
+    <option value="print">print("Hello world")</option>
+    <option value="show">showonpythonscreen.com</option>
   </select><br><br>
 
-  <label for="q2">2. How do you correctly create a variable named age and stored the value 25 in it?</label><br>
-  <select id="q2">
-    <option value="">if</option>
-    <option value="loop">age=25</option>
-    <option value="list">set age to 25 </option>
-    <option value="if">var age 25</option>
+  <label for="q2">2. How do you correctly create a variable named age and store the value 25 in it?</label><br>
+  <select id="q2" required>
+    <option value="" disabled selected>Select an answer</option>
+    <option value="if">if</option>
+    <option value="age=25">age = 25</option>
+    <option value="set">set age to 25</option>
+    <option value="var">var age 25</option>
   </select><br><br>
 
-  <label for="q3">3.what data type will pyhton assign to the number 3.14?</label><br>
-  <select id="q3">
-    <option value="">float</option>
-    <option value="for">int</option>
-    <option value="if">str</option>
-    <option value="class">bool</option>
+  <label for="q3">3. What data type will Python assign to the number 3.14?</label><br>
+  <select id="q3" required>
+    <option value="" disabled selected>Select an answer</option>
+    <option value="float">float</option>
+    <option value="int">int</option>
+    <option value="str">str</option>
+    <option value="bool">bool</option>
   </select><br><br>
 
-
-  <label for="q5">4. Which keyword defines a function?</label><br>
-  <select id="q5">
-    <option value="">def</option>
+  <label for="q4">4. Which keyword defines a function?</label><br>
+  <select id="q4" required>
+    <option value="" disabled selected>Select an answer</option>
     <option value="class">class</option>
     <option value="def">def</option>
     <option value="while">while</option>
   </select><br><br>
 
-  <label for="q6">5. Which keyword begins a class definition?</label><br>
-  <select id="q6">
-    <option value="">else</option>
+  <label for="q5">5. Which keyword begins a class definition?</label><br>
+  <select id="q5" required>
+    <option value="" disabled selected>Select an answer</option>
     <option value="class">class</option>
     <option value="for">for</option>
     <option value="else">else</option>
@@ -119,20 +118,19 @@ learn to code in Python and develop both practical skills and elegant coding hab
   document.getElementById("quiz").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const answers = ["=", "list", "if", "for", "def", "class"];
+    const answers = ["print", "age=25", "float", "def", "class"];
     let score = 0;
 
-    for (let i = 0; i < answers.length; i++) {
-      if (document.getElementById(`q${i + 1}`).value === answers[i]) {
+    answers.forEach((answer, index) => {
+      if (document.getElementById(`q${index + 1}`).value === answer) {
         score++;
       }
-    }
+    });
 
     document.getElementById("quiz-result").textContent =
       `You got ${score} out of ${answers.length} correct.`;
   });
 </script>
-
 
 
 
