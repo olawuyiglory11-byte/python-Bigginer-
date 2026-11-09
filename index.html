@@ -126,6 +126,9 @@ learn to code in Python and develop both practical skills and elegant coding hab
 <style>
   img:hover{transform: scale(1.05);
   transition: ease o.3s;}
+  button{margin-right: 20px;}
+  button:hover{transform: scale(1.05);
+  transition: ease o.3s;}
 </style>
 <script>
   document.getElementById("quiz").addEventListener("submit", function (event) {
@@ -143,7 +146,19 @@ learn to code in Python and develop both practical skills and elegant coding hab
     document.getElementById("quiz-result").textContent =
       `You got ${score} out of ${answers.length} correct.`;
   });
+  function change_background_color() {
+    if (document.body.style.backgroundColor === "black") {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+    } else {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+    }
+}
 </script>
-    
+    <a href = "https://github.com/olawuyiglory11-byte">
+     <button>click here to go to my github</button>
+    </a>
+    <button onclick="change_background_color()">click to make the backgroud color black</button>
 </body>    
 </html>
